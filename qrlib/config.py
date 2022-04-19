@@ -25,11 +25,15 @@ INTERIOR_MEDIUM = {"size": 300, "error_correction": "M"}
 
 INTERIOR_LARGE = {"size": 350, "error_correction": "M"}
 
+INTERIOR_XLARGE = {"size": 500, "error_correction": "M"}
+
 EXTERIOR_SMALL = {"size": 150, "error_correction": "H"}
 
 EXTERIOR_MEDIUM = {"size": 300, "error_correction": "H"}
 
 EXTERIOR_LARGE = {"size": 350, "error_correction": "H"}
+
+EXTERIOR_XLARGE = {"size": 500, "error_correction": "H"}
 
 BLOCK_SIZE = 10  # In pixels, svg style files must be BLOCK_SIZExBLOCK_SIZE
 
