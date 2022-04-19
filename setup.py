@@ -41,9 +41,9 @@ setup(
         ]
     },
     install_requires=[
-        "PIL>=1.1.7",
+        "pillow",
         "unittest2>=0.5.1",
-        "zbar>=0.10",
+        "pyzbar",
         "CairoSVG>=0.4.4",
     ],
 )
