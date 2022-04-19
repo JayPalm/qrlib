@@ -44,6 +44,9 @@ setup(
         "pillow",
         "unittest2>=0.5.1",
         "pyzbar",
-        "CairoSVG>=0.4.4",
+        "CairoSVG",
+        "reportlab",
+        "notebook",
+        "black",
     ],
 )
