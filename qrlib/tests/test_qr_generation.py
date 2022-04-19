@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
 from qrlib import generate_qr_file
-from qrlib.exceptions import StyleMissing, InnerEyeStyleMissing, OuterEyeStyleMissing
-import Image
-import zbar
+from exceptions import StyleMissing, InnerEyeStyleMissing, OuterEyeStyleMissing
+from PIL import Image
+import pyzbar as zbar
 import unittest2 as unittest
-import ipdb
 
 
 class GeneratePDFTestCase(unittest.TestCase):
