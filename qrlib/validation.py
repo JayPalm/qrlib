@@ -28,8 +28,8 @@ from os.path import join, isdir
 
 
 def _check_style(style_dir, style):
-    if not isinstance(style, (str, unicode)):
-        raise AttributeError("style must be str or unicode")
+    if not isinstance(style, str):
+        raise AttributeError("style must be str")
     style = style.lower()
     directory = join(style_dir, style)
     if not isdir(directory):
@@ -65,12 +65,13 @@ def size_validation(width):
 
 def logo_margin_validation(margin):
     if not isinstance(margin, (int, float)) or margin < 0 or margin > 300:
-        raise InvalidLogoMargin("Logo margin validation failed (50 <= margin" "<= 300)")
+        # raise InvalidLogoMargin("Logo margin validation failed (50 <= margin" "<= 300)")
+        raise Exception("Logo margin validation failed (50 <= margin" "<= 300)")
     return True
 
 
 def ec_level_validation(ec_level):
-    if not isinstance(ec_level, (unicode, str)) or ec_level.upper() not in (
+    if not isinstance(ec_level, str) or ec_level.upper() not in (
         "L",
         "M",
         "Q",
@@ -83,7 +84,7 @@ def ec_level_validation(ec_level):
 
 
 def format_validation(qr_format):
-    if not isinstance(qr_format, (unicode, str)) or qr_format.upper() not in (
+    if not isinstance(qr_format, str) or qr_format.upper() not in (
         "SVG",
         "PDF",
         "GIF",
@@ -95,7 +96,7 @@ def format_validation(qr_format):
 
 
 def application_validation(application):
-    if not isinstance(application, (unicode, str)) or application.lower() not in (
+    if not isinstance(application, str) or application.lower() not in (
         "interior",
         "exterior",
     ):
@@ -104,7 +105,7 @@ def application_validation(application):
 
 
 def appsize_validation(app_size):
-    if not isinstance(app_size, (unicode, str)) or app_size.lower() not in (
+    if not isinstance(app_size, str) or app_size.lower() not in (
         "small",
         "medium",
         "large",
@@ -114,7 +115,7 @@ def appsize_validation(app_size):
 
 
 def language_validation(language):
-    if not isinstance(language, (unicode, str)) or language.lower() not in (
+    if not isinstance(language, str) or language.lower() not in (
         "es",
         "en",
         "br",
