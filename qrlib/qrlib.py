@@ -33,6 +33,7 @@ from .validation import (
     inner_eye_style_validation,
     outer_eye_style_validation,
 )
+import io
 import cStringIO
 import Image
 
@@ -50,7 +51,7 @@ def _gen_pdf(qr_pil, instructions=True, bg_color="#FFFFFF", frame=True, put_logo
     in a filelike (StringIO)
     """
     (qr_width, qr_height) = qr_pil.size  # qr_width == qr_height, always
-    filelike = cStringIO.StringIO()
+    filelike = io.StringIO()
     page_size = landscape(A4)
     page_width, page_height = page_size
     qr_canvas = canvas.Canvas(filelike, pagesize=page_size)
@@ -140,8 +141,9 @@ def _generate_pil(
         outer_eye_color=outer_eye_color,
         bg_color=bg_color,
     )
-    converted_file = cStringIO.StringIO()
-    cairosvg.svg2png(generated_svg.getvalue(), write_to=converted_file)
+
+    converted_file = io.BytesIO()
+    cairosvg.svg2png(bytestring=generated_svg.getvalue(), write_to=converted_file)
     converted_file.seek(0)
     qr_pil = Image.open(converted_file)
     return qr_pil
@@ -195,7 +197,7 @@ def _gen_filelike(
             pil, instructions=instructions, bg_color=bg_color, put_logo=True
         )
     if qr_format in ["GIF", "JPEG", "PNG"]:
-        filelike = cStringIO.StringIO()
+        filelike = io.BytesIO()
         pil.save(filelike, qr_format)
         return filelike
     else:
