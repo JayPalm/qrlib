@@ -1,5 +1,6 @@
 # coding: utf-8
-from os.path import abspath, dirname, join
+
+import os
 
 
 # relative to static dir
@@ -41,13 +42,13 @@ QUIET_ZONE = 4  # In blocks
 
 DASHFRAME_MARGIN = 20  # In pixels, the margin from the generated QR for PDF
 
-LIB_ROOT = dirname(abspath(__file__))
-FOOTER_TEXT_FONT = join(LIB_ROOT, "fonts/", FOOTER_FONT)
-LOGO_IMAGE_PATH = join(LIB_ROOT, "static/images/", LOGO_IMAGE)
-STYLES_DIR = join(LIB_ROOT, "static/styles")
-EYE_STYLES_DIR = join(LIB_ROOT, "static/eyes")
-SCISSORS_IMAGE_PATH = join(LIB_ROOT, "static/images/scissors.png")
-INSTRUCTIONS_IMAGE_PATH = join(LIB_ROOT, "static/images/instructions_es.png")
+LIB_ROOT = os.path.dirname(os.path.abspath(__file__))
+FOOTER_TEXT_FONT = os.path.join(LIB_ROOT, "fonts/", FOOTER_FONT)
+LOGO_IMAGE_PATH = os.path.join(LIB_ROOT, "static/images/", LOGO_IMAGE)
+STYLES_DIR = os.path.join(LIB_ROOT, "static/styles")
+EYE_STYLES_DIR = os.path.join(LIB_ROOT, "static/eyes")
+SCISSORS_IMAGE_PATH = os.path.join(LIB_ROOT, "static/images/scissors.png")
+INSTRUCTIONS_IMAGE_PATH = os.path.join(LIB_ROOT, "static/images/instructions_es.png")
 INSTRUCTIONS_CENTER_OFFSET = 0
 
 STYLE_FILES = [
