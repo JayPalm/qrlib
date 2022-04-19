@@ -21,6 +21,7 @@ from exceptions import (
     InvalidSize,
     InvalidLanguage,
     InvalidEcLevel,
+    InvalidAppSize,
 )
 
 import re
