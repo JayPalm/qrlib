@@ -23,7 +23,7 @@ from validation import (
 
 from os.path import join
 import re
-import cStringIO
+import io
 import copy
 
 
@@ -705,11 +705,11 @@ def _qrcode_to_svg(
                 block_scale=block_scale,
             )
 
-    filelike = cStringIO.StringIO()
+    filelike = io.StringIO()
     filelike.write('<?xml version="1.0" standalone="no"?>\n')
     filelike.write('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"\n')
     filelike.write('"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n')
-    filelike.write(et.tostring(svg_doc))
+    filelike.write(et.tostring(svg_doc, encoding="unicode"))
     return filelike
 
 
