@@ -16,13 +16,13 @@ from config import (
     INSTRUCTIONS_IMAGE_PATH,
     INSTRUCTIONS_CENTER_OFFSET,
 )
-from . import qrsvg
+import qrsvg
 import cairosvg
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.utils import ImageReader
 from reportlab.lib.colors import HexColor
-from .validation import (
+from validation import (
     format_validation,
     application_validation,
     appsize_validation,
@@ -34,8 +34,7 @@ from .validation import (
     outer_eye_style_validation,
 )
 import io
-import cStringIO
-import Image
+from PIL import Image
 
 # Monkey patch ReportLab
 # http://stackoverflow.com/questions/2227493/\
