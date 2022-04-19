@@ -6,9 +6,9 @@ import sys
 path = dirname(abspath(__file__))
 if path not in sys.path:
     sys.path.append(path)
-lib = path + "/lib"
-if lib not in sys.path:
-    sys.path.insert(0, lib)
+library = path + "/library"
+if library not in sys.path:
+    sys.path.insert(0, library)
 
 try:
     from .validation import validate_all_config

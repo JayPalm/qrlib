@@ -1,6 +1,6 @@
 # coding: utf-8
 # (c) Copyright 2012 by Miguel Paolino <mpaolino@ideal.com.uy>
-from lib import pyqrcode
+from library import pyqrcode
 from xml.etree import cElementTree as et
 from config import (
     BLOCK_SIZE,

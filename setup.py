@@ -18,7 +18,7 @@ setup(
     license="Propietary",
     keywords="qr library qrlib ideal",
     url="http://github.com/mpaolino/qrlib",
-    packages=["qrlib", "qrlib.lib", "qrlib.fonts", "qrlib.tests"],
+    packages=["qrlib", "qrlib.library", "qrlib.fonts", "qrlib.tests"],
     long_description=read("README.rst"),
     classifiers=[
         "Development Status :: 1 - Stable",
